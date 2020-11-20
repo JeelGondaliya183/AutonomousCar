@@ -10,8 +10,9 @@ def main():
         _, image = camera.read()
         cv2.imshow('Original', image)
 
-        b_w_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        cv2.imshow('B/W', b_w_image)
+        hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+        cv2.imshow('B/W', hsv_image)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
