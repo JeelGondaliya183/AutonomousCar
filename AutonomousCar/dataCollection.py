@@ -2,7 +2,7 @@ import cv2
 
 
 def main():
-    camera = cv2.VideoCapture(-1)
+    camera = cv2.VideoCapture(0)
     camera.set(3, 640)
     camera.set(4, 480)
 
