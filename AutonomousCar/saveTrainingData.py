@@ -1,6 +1,9 @@
+###########################################################
+# Two different functions to store images and steering wheels/turn
+###########################################################
+
 import cv2
 import sys
-from ControMotion import HandCodedLaneFollower
 
 
 def save_image_and_steering_angle(video_file):
