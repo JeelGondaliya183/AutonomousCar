@@ -74,6 +74,33 @@ def find_center_lines(img, lines):
             return lane_lines
 
 
+def compute_steering_angle(frame, lane_lines):
+    if len(lane_lines) == 0:
+        return -90
+
+    height, width, _ = frame.shape
+    if len(lane_lines) == 1:
+        x1, _, x2, _ = lane_lines[0][0]
+        x_offset = x2 - x1
+    else:
+        _, _, left_x2, _ = lane_lines[0][0]
+        _, _, right_x2, _ = lane_lines[1][0]
+        camera_mid_offset_percent = 0.02 # 0.0 means car pointing to center, -0.03: car is centered to left, +0.03 means car pointing to right
+        mid = int(width / 2 * (1 + camera_mid_offset_percent))
+        x_offset = (left_x2 + right_x2) / 2 - mid
+
+    # find the steering angle, which is angle between navigation direction to end of center line
+    y_offset = int(height / 2)
+
+    angle_to_mid_radian = math.atan(x_offset / y_offset)  # angle (in radian) to center vertical line
+    angle_to_mid_deg = int(angle_to_mid_radian * 180.0 / math.pi)  # angle (in degrees) to center vertical line
+    steering_angle = angle_to_mid_deg + 90  # this is the steering angle needed by picar front wheel
+
+    return steering_angle
+
+
+
+
 
 def main():
     camera = cv2.VideoCapture(1)
@@ -120,7 +147,10 @@ def main():
 
         lane_lines = find_center_lines(image, lines)
         lines_image = drawLines(image, lane_lines)
+        steering_angle = compute_steering_angle(image, lane_lines)
 
+        font  = cv2.FONT_HERSHEY_SIMPLEX
+        cv2.putText(lines_image, str(steering_angle), (0,130), font, 1, (200,255,255), 2, cv2.LINE_AA)
         cv2.imshow('Image with Line detecion', lines_image)
 
 
