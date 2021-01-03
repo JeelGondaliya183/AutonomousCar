@@ -1,5 +1,5 @@
 ###########################################################
-# Two different functions to store images and steering wheels/turn
+# saving training data, images with steering angle
 ###########################################################
 
 import cv2
