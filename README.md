@@ -1,8 +1,8 @@
 # Autonomous Car using Raspberry Pi
 
-## Phase 1: Assemble hardware parts 
+## Phase 1: Assemble Hardware Parts 
 
-## Phase 2: Control Car remotely using keyboard
+## Phase 2: Control the Car Remotely using Keyboard
 The reason behind adding this module is to save data to train CNN model, which we is used in phase 4.
 The following are the function associated with keyboard keys:
 W : Move Forward 
@@ -13,7 +13,7 @@ Q: Turn off the camera
 Up Arrow: Increase the speed
 Down Arrow:Decrease the speed
 
-## Phase 3: Lane detection using OpenCV Image Analysis
+## Phase 3: Lane Detection using OpenCV Image Analysis
 ### Lane Detection
 Used Image Analysis techniques like grayscaling, Gaussian smoothing, Canny Edge Detection and Hough Transform line detection to detect lane lines from the image.
 ### Calculate Steering Angle
