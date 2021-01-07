@@ -21,8 +21,8 @@ Assuming the Camera is caliberated to center, compute steering angle based on th
 1. calculate the two points of each line, which intersects with center(of hight) line of the frame
 2. Find the center point(steering angle) of the line, which passes through teo point(from the step
 
-## Phase 4: Training Data Collection(Currently Working)
+## Phase 4: Training Data Collection
 1. Gathered muliple images from video streaming and saved location of each image in CSV file
 2. Calculated steering angle based on the number of time keyboard key was pressed.
 
-## Phase 5: Robust Lane Detection using Convolutional Neural Network(Next Step)
+## Phase 5: Robust Lane Detection using Convolutional Neural Network
