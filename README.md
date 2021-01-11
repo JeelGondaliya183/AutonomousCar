@@ -1,6 +1,8 @@
 # Autonomous Car using Raspberry Pi
 
 ## Phase 1: Assemble Hardware Parts 
+##ROBO CAR
+![alt text](https://github.com/JeelGondaliya183/AutonomousCar/blob/master/RoboCar.jpg?raw=true)
 
 ## Phase 2: Control the Car Remotely using Keyboard
 The reason behind adding this module is to save data to train CNN model, which we is used in phase 4.
