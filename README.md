@@ -22,6 +22,8 @@ Used Image Analysis techniques like grayscaling, Gaussian smoothing, Canny Edge 
 Assuming the Camera is caliberated to center, compute steering angle based on the two detected lane lines.
 1. calculate the two points of each line, which intersects with center(of hight) line of the frame
 2. Find the center point(steering angle) of the line, which passes through teo point(from the step
+![alt text](https://github.com/JeelGondaliya183/AutonomousCar/AutonomousCar/blob/master/000_o86.png?raw=true)
+
 
 ## Phase 4: Training Data Collection
 1. Gathered muliple images from video streaming and saved location of each image in CSV file
